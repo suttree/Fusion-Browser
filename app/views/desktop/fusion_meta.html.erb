@@ -1,0 +1,11 @@
+<div id='fusion_meta'>
+  <h3 id='title'><b>F.U.S.I.O.N Browser</b>: http://<%= @webpage -%></h3>
+  <form action='/desktop/browse' target='_top' method='get' id='url'>
+    <input type='text' name='q' value='http://<%= @webpage -%>' size='80'>
+    <input type='submit' value='Go &raquo;'>
+  </form>
+  <form action='/desktop/google' target='_top' method='get' id='google'>
+    <input type='text' name='q' value='<%= @query -%>' size='20'>
+    <input type='submit' value='Google &raquo;'>
+  </form>
+</div>

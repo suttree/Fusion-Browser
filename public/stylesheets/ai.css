@@ -1,0 +1,44 @@
+body {
+  background:#fff url(../images/ai/christina.jpeg) repeat;
+}
+
+#ai_header {
+  width: 40%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background:transparent url(../images/panel.png) repeat scroll 0 0;
+  border-left: 2px solid #282828;
+  border-right: 2px solid #282828;
+  border-bottom: 2px solid #282828;
+  color:#fff;
+}
+
+#ai_header #avatar {
+  float: left;
+  margin: 5px 10px 10px 5px;
+}
+
+#ai_header #audioPlayer {
+  display:block;
+  margin-top: 5px;
+}
+
+#ai_interface {
+  color: #7a7a7a;
+  margin-top: 325px;
+  padding: 5px;
+  text-align: center;
+  font-weight: lighter;
+  font-family: Gill Sans;
+  background-color: #ededf0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+#spinner {
+  height: 16px;
+  width: 16px;
+  margin: 0px;
+  padding: 0px;
+}

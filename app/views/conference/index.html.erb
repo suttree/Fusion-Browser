@@ -1,0 +1,92 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('a#chat-toggle').click(function() {
+      $('#conference').fadeToggle(500);
+      return false;
+    });
+    $('a#notepad-toggle').click(function() {
+      $('#notepad').fadeToggle(500);
+      return false;
+    });
+    $('a#ai-toggle').click(function() {
+      // Opening animations
+      $("#ai").modal({onOpen: function (dialog) {
+        dialog.overlay.fadeIn('slow', function () {
+          dialog.data.hide();
+          dialog.container.fadeIn('slow', function () {
+            dialog.data.slideDown('slow');
+          });
+        });
+      }});
+      return false;
+    });
+    $(document).ready(function () {
+      $('#page_effect').fadeIn(500);
+    });
+    jQuery.fn.fadeToggle = function(speed, easing, callback) { 
+       return this.animate({opacity: 'toggle'}, speed, easing, callback); 
+    };
+
+  });
+</script>
+
+<script type="text/javascript" src="/javascripts/jquery.jplayer.js"></script> 
+<script type="text/javascript" src="/javascripts/jquery.simplemodal-1.3.3.min.js"></script>
+
+<div id="page_effect" style="display:none;">
+  <div id='toolbar'>
+    <span id='section'>
+      <a href='#' id='ai-toggle'>
+        F.U.S.I.O.N //
+      </a>
+    </span>
+    <span id='section'>
+      <a href='#' id='chat-toggle'>Chat</a>
+    </span>
+    <span id='section'>
+      <a href='#' id='notepad-toggle'>Notepad</a>
+    </span>
+  </div>
+
+  <div id='conference' style='display:none'>
+    <div id='meta'>
+      <span id='title'>
+        Chat with Statler & Waldorf
+      </span>
+      <span id='controls'>
+        <a href='#' id='chat-toggle'>X</a>
+      </span>
+    </div>
+    <div id='video'>
+      <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/14njUwJUg1I&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/14njUwJUg1I&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+    </div>
+  </div>
+  
+  <div id='notepad' style='display:none'>
+    <div id='meta'>
+      <span id='title'>
+        Notepad
+      </span>
+      <span id='controls'>
+        <a href='#' id='notepad-toggle'>X</a>
+      </span>
+    </div>
+    <div id='content'>
+      Hello Leila!
+      <br/><br/>
+      This is meant to be a notepad, probably with some funny notes written on it.
+    </div>
+  </div>
+  
+  <div id='ai' style='display:none'>
+    <div id='title'>
+      F.U.S.I.O.N
+    </div>
+    <div id='content'>
+      You're receiving this message because you are one of the survivors of a global catastrophe.
+      <div id='audioPlayer'>
+        <%= audioPlayer("You're receiving this message because you are one of the survivors of a global catastrophe.") %>
+      </div>
+    </div>
+  </div>
+</div>

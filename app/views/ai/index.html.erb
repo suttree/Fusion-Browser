@@ -1,0 +1,24 @@
+<script>
+  $(document).ready(function () {
+    $('#page_effect').fadeIn(700);
+  });
+</script>
+
+<div id="page_effect" style="display:none;">
+  <div id='ai_header'>
+    <%= render :partial => 'say' %>
+  </div>
+
+  <div id='ai_interface'>
+    <form id='ai'>
+      <input type='text' name='q' size='50'> 
+      <%= submit_to_remote 'say', 'Speak', 
+            :url => { :action => 'say' }, 
+            :update => 'ai_header',
+            :loading => spinner = "$('#spinner').toggle()",
+            :complete => spinner = "$('#spinner').toggle()"
+      %>
+      <%= image_tag 'ajax-loader-fff.gif', :id => 'spinner', :style => 'display:none' %>
+    </form>
+  </div>
+</div>
